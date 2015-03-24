@@ -1,0 +1,1 @@
+rem Instalación componente

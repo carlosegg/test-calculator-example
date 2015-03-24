@@ -1,0 +1,43 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<link href="../../../../../../concordion.css" rel="stylesheet" type="text/css" />
+<body>
+
+    <h1>Calculadora</h1>
+
+    <p>
+    	Cuando el usuario introduce dos números no negativos, se calcula la suma de ambos números. 
+    	Ejemplo: Si el usuario introduce 2 y 2 el resultado debe ser 2 + 2 = 4
+    </p>
+
+    <div class="suma">
+
+		<h3>Suma</h3>
+		
+        <p>
+            Cuando el usuario introduce como primer sumando un <b concordion:set="#a">2</b>
+            y como segundo sumando un <b concordion:set="#b">2</b>. El resultado debe ser:
+            <b concordion:assertEquals="add(#a,#b)">2 + 2 = 4</b>
+        </p>
+        
+        <p>
+            Cuando el usuario introduce como primer sumando un número negativo <b concordion:set="#a">-1</b>
+            y como segundo sumando un <b concordion:set="#b">2</b>
+            <b concordion:assertEquals="add(#a,#b)">ERROR: Los dos sumandos han de ser positivos</b>
+        </p>
+        
+        <p>
+            Cuando el usuario introduce como primer sumando un número negativo <b concordion:set="#a">-1</b>
+            y como segundo sumando otro numero negativo <b concordion:set="#b">-2</b>
+            <b concordion:assertEquals="add(#a,#b)">ERROR: Los dos sumandos han de ser positivos</b>
+        </p>
+        
+        <p>
+            Cuando el usuario introduce como primer sumando <b concordion:set="#a">1</b>
+            y como segundo sumando un número negativo <b concordion:set="#b">-2</b>
+            <b concordion:assertEquals="add(#a,#b)">ERROR: Los dos sumandos han de ser positivos</b>
+        </p>
+        
+    </div>
+
+</body>
+</html>
